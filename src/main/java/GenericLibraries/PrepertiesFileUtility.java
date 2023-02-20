@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-/*
+/**
  * The class contains reusable method to perform operations on properties file
  * 
  */
@@ -13,19 +13,21 @@ import java.util.Properties;
 public class PrepertiesFileUtility {
 	private Properties property;
 
-	/*
+	/**
 	 * This method is used to initialize properties file
+	 * 
+	 * @param filepath
 	 */
-
 	public void propertyFileInitilzation(String filepath) {
 		FileInputStream fil = null;
 
 		try {
 			fil = new FileInputStream(filepath);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (FileNotFoundException e1) {
+
+			e1.printStackTrace();
 		}
+
 		property = new Properties();
 
 		try {
@@ -36,7 +38,7 @@ public class PrepertiesFileUtility {
 		}
 	}
 
-	/*
+	/**
 	 * this method returns the data from properties file based on key we passed
 	 */
 	public String fetchProperty(String key) {
